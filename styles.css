@@ -671,6 +671,17 @@ h1, h2, h3, h4, h5, h6 {
     translate: 500px -3px;
 }
 
+@keyframes subindo {
+    0% {
+        transform: scaleY(0.1);
+    }
+
+}
+
+.app__form-add-task {
+    animation: subindo linear 300ms;
+}
+
 @media (max-width: 625px) {
     .app__card-button {
         padding: 0.8rem;
