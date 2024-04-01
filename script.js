@@ -21,6 +21,14 @@ let intervaloId = null
 
 musica.loop = true
 
+startPauseBt.addEventListener("click", () => {
+  startPauseBt.classList.toggle("app__card-primary-button-anime");
+
+  setTimeout( () => {
+    startPauseBt.classList.remove("app__card-primary-button-anime");
+  }, 200);
+});
+
 musicaFocoInput.addEventListener('change', () => {
     if(musica.paused) {
         musica.play()
@@ -78,6 +86,11 @@ function alterarContexto(contexto) {
 const contagemRegressiva = () => {
     if(tempoDecorridoEmSegundos <= 0){
         audioTempoFinalizado.play()
+        const focoAtivo = html.getAttribute('data-contexto') == 'foco'
+        if (focoAtivo) {
+            const evento = new CustomEvent('FocoFinalizado')
+            document.dispatchEvent(evento)
+        }
         zerar()
         return
     }
