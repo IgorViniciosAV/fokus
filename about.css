@@ -363,7 +363,7 @@ body {
 
 @media screen and (max-width: 500px) {
     .app__section-banner-container {
-        animation-range: entry 30% cover 90%;
+        animation-range: entry 10% cover 90%;
     }
 }
 
