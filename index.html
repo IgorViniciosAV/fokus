@@ -14,6 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="./styles.css">
     <script src="./script.js" defer></script>
     <script src="./script-crud.js" defer></script>
@@ -37,16 +38,20 @@
         </section>
         <section class="app__section-card-container">
             <div class="app__card">
-                <a class="saber-mais" href="about.html"><img class="saber-mais" src="./imagens/interrogação.png" alt="Para Saber mais, Pomodoro"></a>
+                <a class="saber-mais" href="about.html"><img class="saber-mais" src="./imagens/interrogação.png"
+                        alt="Para Saber mais, Pomodoro"></a>
                 <ul class="app__card-list">
                     <li class="app__card-list-item">
-                        <button data-contexto="foco" class="app__card-button app__card-button--foco active">Foco</button>
+                        <button data-contexto="foco"
+                            class="app__card-button app__card-button--foco active">Foco</button>
                     </li>
                     <li class="app__card-list-item">
-                        <button data-contexto="short" class="app__card-button app__card-button--curto ">Descanso curto</button>
+                        <button data-contexto="short" class="app__card-button app__card-button--curto ">Descanso
+                            curto</button>
                     </li>
                     <li class="app__card-list-item">
-                        <button data-contexto="long" class="app__card-button app__card-button--longo ">Descanso longo</button>
+                        <button data-contexto="long" class="app__card-button app__card-button--longo ">Descanso
+                            longo</button>
                     </li>
                 </ul>
                 <div id="timer" class="app__card-timer"></div>
@@ -72,7 +77,7 @@
             </div>
         </section>
 
-        
+
         <section class="app__section-task-container">
             <div class="app__section-task-content">
                 <header class="app__section-active-task">
@@ -103,7 +108,7 @@
                 </div>
 
                 <div class="modal hidden">
-                    <input class="input-modificar hidden" placeholder="Como deseja alterar?"> 
+                    <input class="input-modificar hidden" placeholder="Como deseja alterar?">
                     <button class="botao-modificar hidden">Editar</button>
                 </div>
 
@@ -113,7 +118,8 @@
                         <label class="app__form-label">
                             Adicionando tarefa
                         </label>
-                        <textarea required rows="4" class="app__form-textarea" placeholder="No que você está trabalhando?"></textarea>
+                        <textarea required rows="4" class="app__form-textarea"
+                            placeholder="No que você está trabalhando?"></textarea>
                     </div>
                     <footer class="app__form-footer">
                         <div class="splitter"></div>
@@ -126,18 +132,19 @@
                     </footer>
                 </form>
                 <button class="app__button--add-task">
-                    <img src="./imagens/add_circle.png" alt=""> Adicionar nova tarefa
+                    <img class="app__button-image " src="./imagens/add_circle.png" alt=""> Adicionar nova tarefa
                 </button>
             </div>
         </section>
 
         <footer class="app__footer">
             <p class="app__footer-text">
-                Projeto fictício e sem fins comerciais. Imagens geradas por IA no Adobe Firefly. Desenvolvido por Igor Vinicios - Alura.
+                Projeto fictício e sem fins comerciais. Imagens geradas por IA no Adobe Firefly. Desenvolvido por Igor
+                Vinicios - Alura.
             </p>
         </footer>
     </main>
-    
+
 </body>
 
 </html>

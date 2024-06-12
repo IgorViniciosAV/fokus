@@ -4,6 +4,7 @@ const formAdicionarTarefa = document.querySelector('.app__form-add-task')
 const textArea = document.querySelector('.app__form-textarea')
 const ulTarefas = document.querySelector('.app__section-task-list')
 const paragrafoDescricaoTarefa = document.querySelector('.app__section-active-task-description')
+const imagemBotaoAdicionarTarefa = document.querySelector('.app__button-image')
 
 const inputModificar = document.querySelector('.input-modificar')
 const botaoModificar = document.querySelector('.botao-modificar')
@@ -35,7 +36,7 @@ function criarElementoTarefa(tarefa) {
     const paragrafo = document.createElement('p')
     paragrafo.textContent = tarefa.descricao
     paragrafo.classList.add('app__section-task-list-item-description')
-    
+
     const input = document.createElement('input')
     input.setAttribute('placeholder', 'Como deseja alterar?');
     input.classList.add('input-modificar')
@@ -56,7 +57,7 @@ function criarElementoTarefa(tarefa) {
         input.classList.toggle('hidden')
         confirmar.classList.toggle('hidden')
         paragrafo.classList.toggle('hidden')
-        
+
         confirmar.addEventListener('click', () => {
             input.classList.add('hidden')
             confirmar.classList.add('hidden')
@@ -66,12 +67,12 @@ function criarElementoTarefa(tarefa) {
             if (novaDescricao) {
                 paragrafo.textContent = novaDescricao
                 tarefa.descricao = novaDescricao
-                atualizarTarefas()               
+                atualizarTarefas()
             }
         })
-        
+
     }
-    
+
 
     const imagemBotao = document.createElement('img')
     imagemBotao.setAttribute('src', './imagens/edit.png')
@@ -101,8 +102,8 @@ function criarElementoTarefa(tarefa) {
             tarefaSelecionada = tarefa
             liTarefaSelecionada = li
             paragrafoDescricaoTarefa.textContent = tarefa.descricao
-    
-            li.classList.add('app__section-task-list-item-active') 
+
+            li.classList.add('app__section-task-list-item-active')
         }
     }
 
@@ -111,6 +112,7 @@ function criarElementoTarefa(tarefa) {
 
 btnAdicionarTarefa.addEventListener('click', () => {
     formAdicionarTarefa.classList.toggle('hidden')
+    imagemBotaoAdicionarTarefa.classList.toggle('imagem-animada')
 })
 btnCancelarTarefa.addEventListener('click', () => {
     formAdicionarTarefa.classList.toggle('hidden')

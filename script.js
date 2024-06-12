@@ -22,15 +22,15 @@ let intervaloId = null
 musica.loop = true
 
 startPauseBt.addEventListener("click", () => {
-  startPauseBt.classList.toggle("app__card-primary-button-anime");
+    startPauseBt.classList.toggle("app__card-primary-button-anime");
 
-  setTimeout( () => {
-    startPauseBt.classList.remove("app__card-primary-button-anime");
-  }, 200);
+    setTimeout(() => {
+        startPauseBt.classList.remove("app__card-primary-button-anime");
+    }, 200);
 });
 
 musicaFocoInput.addEventListener('change', () => {
-    if(musica.paused) {
+    if (musica.paused) {
         musica.play()
     } else {
         musica.pause()
@@ -57,7 +57,7 @@ longoBt.addEventListener('click', () => {
 
 function alterarContexto(contexto) {
     mostrarTempo()
-    botoes.forEach(function (contexto){
+    botoes.forEach(function (contexto) {
         contexto.classList.remove('active')
     })
     html.setAttribute('data-contexto', contexto)
@@ -72,7 +72,7 @@ function alterarContexto(contexto) {
         case "descanso-curto":
             titulo.innerHTML = `
             Que tal dar uma respirada? <strong class="app__title-strong">Faça uma pausa curta!</strong>
-            ` 
+            `
             break;
         case "descanso-longo":
             titulo.innerHTML = `
@@ -84,7 +84,7 @@ function alterarContexto(contexto) {
 }
 
 const contagemRegressiva = () => {
-    if(tempoDecorridoEmSegundos <= 0){
+    if (tempoDecorridoEmSegundos <= 0) {
         audioTempoFinalizado.play()
         const focoAtivo = html.getAttribute('data-contexto') == 'foco'
         if (focoAtivo) {
@@ -101,7 +101,7 @@ const contagemRegressiva = () => {
 startPauseBt.addEventListener('click', iniciarOuPausar)
 
 function iniciarOuPausar() {
-    if(intervaloId){
+    if (intervaloId) {
         audioPausa.play()
         zerar()
         return
@@ -113,15 +113,15 @@ function iniciarOuPausar() {
 }
 
 function zerar() {
-    clearInterval(intervaloId) 
+    clearInterval(intervaloId)
     iniciarOuPausarBt.textContent = "Começar"
     iconeBotao.setAttribute('src', './imagens/play_arrow.png')
     intervaloId = null
 }
 
 function mostrarTempo() {
-    const tempo = new Date(tempoDecorridoEmSegundos * 1000) 
-    const tempoFormatado = tempo.toLocaleString('pt-br', {minute: '2-digit', second: '2-digit'} )
+    const tempo = new Date(tempoDecorridoEmSegundos * 1000)
+    const tempoFormatado = tempo.toLocaleString('pt-br', { minute: '2-digit', second: '2-digit' })
     tempoNatela.innerHTML = `${tempoFormatado}`
 }
 
