@@ -10,6 +10,7 @@ const musicaFocoInput = document.querySelector('#alternar-musica')
 const iniciarOuPausarBt = document.querySelector('#start-pause span')
 const iconeBotao = document.querySelector('#start-pause img')
 const tempoNatela = document.querySelector('#timer')
+const timerTitulo = document.querySelector('head > title');
 
 const musica = new Audio('./sons/luna-rise-part-one.mp3')
 const audioPlay = new Audio('./sons/play.wav');
@@ -122,7 +123,8 @@ function zerar() {
 function mostrarTempo() {
     const tempo = new Date(tempoDecorridoEmSegundos * 1000)
     const tempoFormatado = tempo.toLocaleString('pt-br', { minute: '2-digit', second: '2-digit' })
-    tempoNatela.innerHTML = `${tempoFormatado}`
+    tempoNatela.innerHTML = `${tempoFormatado}` 
+    timerTitulo.innerHTML = `Fokus - ${tempoFormatado}`
 }
 
 mostrarTempo()
